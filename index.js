@@ -15,6 +15,13 @@ const cres = document.querySelector('#cres');
 const presFig = document.querySelector('#pres i');
 const roundCounterElement = document.querySelector('#roundcounter');
 const roundWinnerElement = document.querySelector('#roundwinner');
+const playerTimesWon = document.querySelector('#ptw');
+const computerTimesWon = document.querySelector('#ctw');
+const finalWinner = document.querySelector('#final-winner');
+const endScreen = document.querySelector('.game-end-screen')
+const playerFinal = document.querySelector('.player-final-count')
+const computerFinal = document.querySelector('.computer-final-count')
+const replay = document.querySelector('.replay')
 
 btn.onclick = () => {
     startScreen.setAttribute('style', 'display: none;');
@@ -23,6 +30,10 @@ btn.onclick = () => {
                                        margin-top: 3rem;
                                        flex-direction: column;
                                        display: flex;`);
+};
+
+replay.onclick = () => {
+    location.reload();
 };
 
 function getComputerChoice() {
@@ -44,6 +55,24 @@ function playOneRound(computerChoice, playerChoice) {
     return roundResult;
 }
 
+function endGame(computerWinCount, playerWinCount) {
+    gameWrapper.setAttribute('style', 'display: none;');
+    endScreen.setAttribute('style', `height: 800px;
+                                           margin-top: 3rem;
+                                           display: flex;
+                                           flex-direction: column;
+                                           justify-content: center;`);
+    playerFinal.textContent = `Computer won ${computerWinCount} rounds`;
+    computerFinal.textContent = `Player won ${playerWinCount} rounds`;
+    if(computerWinCount > playerWinCount) {
+        finalWinner.textContent = "Winner: Computer";
+    } else if(computerWinCount < playerWinCount) {
+        finalWinner.textContent = "Winner: Player";
+    } else {
+        finalWinner.textContent = "Tie";
+    }
+}
+
 function playGame() {
     let pChoice;
     let cChoice;
@@ -51,16 +80,14 @@ function playGame() {
         input.onclick = () => {
             round += 1;
 
-            // TODO: stop game when round is greater than 5
-
             roundCounterElement.textContent = `Round ${round}`;
-            pres.setAttribute("class", `${input.className}`)
+            pres.setAttribute("class", `${input.className}`);
             if(input.className === 'fa fa-hand-rock-o') {
                 pChoice = 'rock';
             } else if (input.className === 'fa fa-hand-paper-o') {
-                pChoice = 'paper'
+                pChoice = 'paper';
             } else {
-                pChoice = 'scissors'
+                pChoice = 'scissors';
             }
 
             cChoice = getComputerChoice();
@@ -78,11 +105,17 @@ function playGame() {
             if (roundWinner === "Player won this round") {
                 playerWinCount += 1;
                 roundWinnerElement.textContent = "You won this round";
+                playerTimesWon.textContent = `Player won ${playerWinCount} rounds`;
             } else if (roundWinner === "Computer won this round") {
                 roundWinnerElement.textContent = "Computer won this round";
                 computerWinCount += 1;
+                computerTimesWon.textContent = `Computer won ${computerWinCount} rounds`;
             } else {
                 roundWinnerElement.textContent = "Tie";
+            }
+
+            if(round == 5){
+                endGame(computerWinCount, playerWinCount);
             }
         };
     });
