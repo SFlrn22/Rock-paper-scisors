@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    text-align: center;
+    font-size: 50px;
+}
+
+html, body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #320972;
+    color: #FFF6FF;
+}
+
+.game-wrapper{
+    height: 800px;
+    width: 1200px;
+    margin-top: 3rem;
+    flex-direction: column;
+    display: none;
+}
+
+
+.inputs {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.inp{
+    height: 100px;
+    width: 100px;
+    border: 2px solid #FCEAFF;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.results {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.res{
+    height: 150px;
+    width: 150px;
+    border: 2px solid #FCEAFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.res:nth-child(2) {
+    align-self: flex-end;
+}
+
+.fe {
+    align-self: flex-end;
+}
+
+.fa-hand-rock-o, .fa-hand-paper-o, .fa-hand-scissors-o { 
+    font-size: 100px;
+    text-align: center;
+}
+
+.fa-flash {
+    font-size: 60px;
+}
+
+.fa-question {
+    font-size: 100px;
+}
+
+.game-start-screen {
+    height: 800px;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.start {
+    margin-top: 100px;
+    font-size: 30px;
+    padding: 15px;
+    align-self: center;
+    color: #FFF6FF;
+    background-color: #9D88B3;
+    border-radius: 15px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.replay {
+    margin-top: 25px;
+    font-size: 30px;
+    padding: 15px;
+    align-self: center;
+    color: #FFF6FF;
+    background-color: #9D88B3;
+    border-radius: 15px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.round-result {
+    margin-top: -25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.final-results {
+    margin-top: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.taunt {
+    text-align: center;
+    margin-top: 5px;
+    color: rgb(175, 12, 12);
+}

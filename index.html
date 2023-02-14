@@ -4,11 +4,40 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rock-paper-scisors</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="./index.css">
-        <script src="./index.js"></script>
+        <script src="./index.js" defer></script>
+        <title>Rock-paper-scisors</title>
     </head>
     <body>
-        
+        <div class="game-start-screen">
+            <h1 class="title">Rock-paper-scissors best of 5</h1>
+            <h1>Play 5 rounds of Rock-paper-scisors with the computer</h1>
+            <h1 class="taunt">Will you be able to win?</h1>
+            <button class="start" id="startbtn">Start game</button>
+        </div>
+        <div class="game-wrapper">
+            <h1 class="title">Rock-paper-scissors best of 5</h1>
+            <div class="results">
+                <div class="res"><i id="pres" class="fa fa-question"></i></div>
+                <div class="vs-icon"><i class="fa fa-flash"></i></div>
+                <div class="res"><i id="cres" class="fa fa-question"></i></div>
+            </div>
+            <div class="round-result">
+                <h1 id="roundcounter">Round</h1>
+                <h2 id="roundwinner">Winner</h2>
+            </div>
+            <div class="inputs">
+                <div class="inp" id="fa fa-hand-rock-o"><i id="inp" class="fa fa-hand-rock-o"></i></div>
+                <div class="inp" id="fa fa-hand-paper-o"><i id="inp" class="fa fa-hand-paper-o"></i></div>
+                <div class="inp" id="fa fa-hand-scissors-o"><i id="inp" class="fa fa-hand-scissors-o"></i></div>
+            </div>
+            <div class="final-results">
+                <h3>Player won x times</h3>
+                <h3>Computer won x times</h3>
+                <h2>The winner is: </h2>
+                <button class="replay">Play again</button>
+            </div>
+        </div>
     </body>
 </html>
